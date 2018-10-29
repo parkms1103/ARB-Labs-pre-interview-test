@@ -15,20 +15,18 @@ app.use(express.static('public'));
 var io = socket(server);
 io.on('connection', (socket) => {
 
-    console.log('made socket connection', socket.id);
+    console.log('Made socket connection', socket.id);
 
     // Handle event
     socket.on('log', function(){
         const file1 = fs.readFileSync('./dealer_log_2.json');
         const log_file = JSON.parse(file1);
-        console.log(log_file);
         socket.emit('log', log_file);
     });
 
     socket.on('ranking', function(){
         const file2 = fs.readFileSync('./dealer_ranking_2.json');
         const ranking_file = JSON.parse(file2);
-        console.log(ranking_file);
         socket.emit('ranking', ranking_file);
     });
 
