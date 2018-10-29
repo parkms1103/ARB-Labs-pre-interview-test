@@ -17,13 +17,11 @@ app.controller("tableCtrl", function($scope){
 
 	// Listen for events
 	socket.on('log', function(log_file){
-	    console.log(log_file)
 	    $scope.records = log_file
 	    $scope.$apply();
 	});
 
 	socket.on('ranking', function(ranking_file){
-		console.log(ranking_file)
 	    $scope.records = ranking_file
 	    $scope.$apply();
 	});
