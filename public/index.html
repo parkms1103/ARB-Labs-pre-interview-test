@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Dealer Performance Tools</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Pre-Interview Test">
+    <meta name="author" content="Minsoo Park">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+  </head>
+  <body>
+    <h1 class="title">Dealer Performance Tools</h1>
+    <div class="container" style="background-color: rgba(245, 245, 245, 0.8);">
+      <br>
+      <div class="dropdown">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Menu</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" id="log">Log</a>
+            <a class="dropdown-item" href="#" id="ranking">Ranking</a>
+          </div>
+      </div>
+      <br>
+      <table class="board" ng-controller="tableCtrl" border="1">
+        <thead>
+          <tr>
+            <th ng-repeat="(key, value) in records[0]">{{key}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="(key, value) in records">
+            <td ng-repeat="(key, value) in value">
+              {{value}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+    <script src="/script.js"></script>
+  </body> 
+</html>
